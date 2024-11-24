@@ -20,8 +20,7 @@ jobs:
   - !BuildImageStep
     name: Build and publish docker image
     output: !RegistryOutput
-      tags: git.sudo.boats/sudo-ha-dashboard/sudo-ha-dashboard:latest
-    builtInRegistryAccessTokenSecret: docker-pusher
+      tags: sudo-ha-dashboard/sudo-ha-dashboard:latest
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   retryCondition: never
   maxRetries: 3
