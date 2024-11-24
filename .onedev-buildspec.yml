@@ -11,7 +11,8 @@ jobs:
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   - !CommandStep
     name: Build
-    runInContainer: false
+    runInContainer: true
+    image: node:latest
     interpreter: !DefaultInterpreter
       commands: |
         npm run build
