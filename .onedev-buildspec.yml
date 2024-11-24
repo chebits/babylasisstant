@@ -15,6 +15,7 @@ jobs:
     image: node:latest
     interpreter: !DefaultInterpreter
       commands: |
+        mkdir dist
         npm run build
     useTTY: true
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
