@@ -1,0 +1,36 @@
+{
+  "name": "threejs-dashboard",
+  "description": "HACS lovelace homeassistant dashboard",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx browserify -p esmify src/main.js > dist/threejs-dashboard.js",
+    "run": "npx vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chedim/threejs-dashboard.git"
+  },
+  "keywords": [],
+  "author": "Chedim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chedim/threejs-dashboard/issues"
+  },
+  "homepage": "https://github.com/chedim/threejs-dashboard",
+  "main": "dist/threejs-dashboard.js",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.1",
+    "esmify": "^2.1.1",
+    "http-server": "^14.1.1",
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "babylonjs": "^7.31.0",
+    "lit-element": "^4.1.1",
+    "wired-card": "^2.1.0"
+  }
+}
