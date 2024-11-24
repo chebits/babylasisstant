@@ -1,0 +1,28 @@
+version: 35
+jobs:
+- name: Build and Publish Docker Image
+  jobExecutor: SudoShell
+  steps:
+  - !CheckoutStep
+    name: Checkout
+    cloneCredential: !DefaultCredential {}
+    withLfs: false
+    withSubmodules: true
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !CommandStep
+    name: Build
+    runInContainer: false
+    interpreter: !DefaultInterpreter
+      commands: |
+        npm run build
+    useTTY: true
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !BuildImageStep
+    name: Build and publish docker image
+    output: !RegistryOutput
+      tags: sudo-ha-dashboard:latest
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 3600
