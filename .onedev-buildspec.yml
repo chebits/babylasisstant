@@ -14,9 +14,7 @@ jobs:
     runInContainer: true
     image: node:latest
     interpreter: !DefaultInterpreter
-      commands: |
-        mkdir dist
-        npm run build
+      commands: "mkdir dist\nnpm install \nnpm run build\n"
     useTTY: true
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   - !BuildImageStep
