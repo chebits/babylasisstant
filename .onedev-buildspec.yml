@@ -20,7 +20,7 @@ jobs:
   - !BuildImageStep
     name: Build and publish docker image
     output: !RegistryOutput
-      tags: sudo-ha-dashboard:latest
+      tags: git.sudo.boats/sudo-ha-dashboard/sudo-ha-dashboard:latest
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   retryCondition: never
   maxRetries: 3
