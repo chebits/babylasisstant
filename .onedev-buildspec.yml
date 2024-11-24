@@ -1,7 +1,7 @@
 version: 35
 jobs:
 - name: Build and Publish Docker Image
-  jobExecutor: SudoShell
+  jobExecutor: SudoDocker
   steps:
   - !CheckoutStep
     name: Checkout
