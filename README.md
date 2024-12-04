@@ -14,6 +14,15 @@ npm build
 npm run run
 ```
 
+## Running with docker
+```
+git clone https://github.com/chebits/babylasisstant.git
+cd babylassistant
+docker build . -t babylassistant
+docker run -p 5173:5173 babylassistant
+```
+
+
 ## HA Configuration
 Add this to your `configuration.yaml`:
 ```
