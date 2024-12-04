@@ -5,3 +5,13 @@ A home assistant dashboard with BabylonJS in it. Works in FF, and, surprisingly,
 
 https://github.com/user-attachments/assets/c4622b9d-a3f4-422e-be4c-6353d42c53f9
 
+## HA Configuration
+Add this to your `configuration.yaml`:
+```
+panel_custom
+  - name: babylassistant              
+    url_path: babylassistant
+    sidebar_title: Sailboat!            
+    module_url: http://localhost:5173
+    trust_external_script: true
+```
