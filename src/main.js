@@ -71,7 +71,7 @@ class SudoPanel extends LitElement {
     //     {diameter: 2, segments: 32}, scene);
     // Move the sphere upward 1/2 its height
     // sphere.position.y = 1;
-    SceneLoader.Append("http://localhost:5173/assets/", "sailboat.obj", scene, null, "obj", "sailboat");
+    SceneLoader.Append("https://ha-dashboard.sudo.boats/assets/", "sailboat.obj", scene, null, "obj", "sailboat");
     // Built-in 'ground' shape.
     // const ground = BABYLON.MeshBuilder.CreateGround("ground",
     //     {width: 6, height: 6}, scene);
