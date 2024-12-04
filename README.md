@@ -5,6 +5,15 @@ A home assistant dashboard with BabylonJS in it. Works in FF, and, surprisingly,
 
 https://github.com/user-attachments/assets/c4622b9d-a3f4-422e-be4c-6353d42c53f9
 
+## Running
+```
+git clone https://github.com/chebits/babylasisstant.git
+cd babylassistant
+npm install
+npm build
+npm run run
+```
+
 ## HA Configuration
 Add this to your `configuration.yaml`:
 ```
