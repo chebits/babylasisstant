@@ -7,4 +7,4 @@ COPY dist dist
 COPY vite.config.js .
 EXPOSE 5173
 
-CMD npx vite run
+CMD npx vite run --host

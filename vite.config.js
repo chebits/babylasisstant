@@ -6,5 +6,8 @@ export default {
     },
     preview: {
         port: 5173
+    },
+    server: {
+        host: true
     }
 }
