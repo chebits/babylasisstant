@@ -7,7 +7,7 @@ import {
 
 import "babylonjs";
 
-class ThreePanel extends LitElement {
+class SudoPanel extends LitElement {
   static get properties() {
     return {
       hass: { type: Object },
@@ -74,4 +74,4 @@ class ThreePanel extends LitElement {
     return scene;
   }
 }
-customElements.define("threejs-dashboard", ThreePanel);
+customElements.define("sudo-dashboard", SudoPanel);
