@@ -5,6 +5,7 @@ WORKDIR /app
 RUN npm install vite
 COPY dist dist
 COPY src src
+COPY assets assets
 COPY vite.config.js .
 COPY index.html .
 COPY package.json .

@@ -9,5 +9,6 @@ export default {
     },
     server: {
         host: true
-    }
+    },
+    assetsInclude: ['assets/**'],
 }

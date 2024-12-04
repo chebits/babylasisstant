@@ -6,6 +6,8 @@ import {
 } from "lit-element";
 
 import "babylonjs";
+import { SceneLoader } from "@babylonjs/core";
+import "@babylonjs/loaders/OBJ";
 
 class SudoPanel extends LitElement {
   static get properties() {
@@ -15,14 +17,15 @@ class SudoPanel extends LitElement {
       route: { type: Object },
       panel: { type: Object },
       canvas: { type: Object },
-      engine: { type: Object },
+      engine: { type: BABYLON.Engine },
+      scene: { type: BABYLON.Scene },
     };
   }
 
   constructor() {
     super();
     this.canvas = document.createElement("canvas");
-    this.engine = new BABYLON.Engine(this.canvas, true, null, true);
+    const engine = this.engine = new BABYLON.Engine(this.canvas, true, null, true);
 
     const scene = this.createScene(); //Call the createScene function
     // Register a render loop to repeatedly render the scene
@@ -31,7 +34,7 @@ class SudoPanel extends LitElement {
     });
     // Watch for browser/canvas resize events
     window.addEventListener("resize", function () {
-      this.engine.resize();
+      engine.resize();
     });
   }
 
@@ -51,7 +54,7 @@ class SudoPanel extends LitElement {
 
   createScene() {
     // Creates a basic Babylon Scene object
-    const scene = new BABYLON.Scene(this.engine);
+    const scene = this.scene = new BABYLON.Scene(this.engine);
     // Creates and positions a free camera
     const camera = new BABYLON.ArcRotateCamera("camera1", 0.75, 0.8, 10, new BABYLON.Vector3(0, 0, 0), scene);
     // Targets the camera to scene origin
@@ -64,14 +67,15 @@ class SudoPanel extends LitElement {
     // Dim the light a small amount - 0 to 1
     light.intensity = 0.7;
     // Built-in 'sphere' shape.
-    const sphere = BABYLON.MeshBuilder.CreateSphere("sphere",
-        {diameter: 2, segments: 32}, scene);
+    // const sphere = BABYLON.MeshBuilder.CreateSphere("sphere",
+    //     {diameter: 2, segments: 32}, scene);
     // Move the sphere upward 1/2 its height
-    sphere.position.y = 1;
+    // sphere.position.y = 1;
+    SceneLoader.Append("http://localhost:5173/assets/", "sailboat.obj", scene, null, "obj", "sailboat");
     // Built-in 'ground' shape.
-    const ground = BABYLON.MeshBuilder.CreateGround("ground",
-        {width: 6, height: 6}, scene);
-    return scene;
+    // const ground = BABYLON.MeshBuilder.CreateGround("ground",
+    //     {width: 6, height: 6}, scene);
+    return this.scene;
   }
 }
 customElements.define("sudo-dashboard", SudoPanel);
