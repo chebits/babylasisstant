@@ -30,6 +30,6 @@ panel_custom
   - name: babylassistant              
     url_path: babylassistant
     sidebar_title: Sailboat!            
-    module_url: http://localhost:5173
+    module_url: http://localhost:5173/src/main.js
     trust_external_script: true
 ```
