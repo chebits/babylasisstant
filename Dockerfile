@@ -2,7 +2,8 @@ FROM node:latest
 
 WORKDIR /app
 
-RUN npm instal vite
+RUN npm install vite
+RUN npm ci
 COPY dist dist
 COPY src src
 COPY vite.config.js .
